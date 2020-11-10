@@ -1,0 +1,37 @@
+## make bricks problem and different solutions:
+def make_bricks(small, big, goal):
+##Approach 1:
+    #fail #1-- not enough
+    if goal > big * 5 + small:
+        return False
+    ##fail #2-- not enough small
+    if goal % 5 > small:
+        return False
+    return True
+    
+####Approach 2:
+    #return small + (min(goal/5,big)*5) >= goal
+    
+##Approach 4:
+    #return small >= goal % 5 and goal <= small + big * 5
+    
+####Approach 5:
+    """
+    if goal > big * 5 + small:
+        return False
+    elif big <> 0 and goal % 5 > small:
+        return False
+    else:
+        return True """
+        
+####Approach 6:
+    #return small + big*5 >= goal and goal % 5 <= small
+    
+####Approach 7:
+    #return goal - min(big, goal / 5) * 5 <= small
+    
+####Approach 8:
+    #return (goal - small - (5*big)) <=0 and goal%5 <=small
+    
+####Approach 9:
+    #return max(goal - (5 * big), goal % 5) <= small
